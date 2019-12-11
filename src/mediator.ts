@@ -91,7 +91,7 @@ function getGhostElement(wrapperElement: HTMLElement, { x, y }: Position, contai
   ghost.style.position = 'fixed';
   ghost.style.top = '0px';
   ghost.style.left = '0px';
-  ghost.style.transform = null;
+  ghost.style.transform = '';
   ghost.style.removeProperty('transform');
 
   if (container.shouldUseTransformForGhost()) {
@@ -479,7 +479,7 @@ function onMouseUp() {
     handleMissedDragFrame();
     dropAnimationStarted = true;
     handleDropAnimation(() => {
-      isDragging = false; // 
+      isDragging = false; //
       fireOnDragStartEnd(false);
       const containers = dragListeningContainers || [];
 
